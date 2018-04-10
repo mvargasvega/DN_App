@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var expressLayouts = require('express-ejs-layouts');
 
 
+var db = require(`./models`);
+
 //Configure app
 app.set('views', __dirname + 'views');      // Views directory
 app.use(express.static('public'));          // Static directory
