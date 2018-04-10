@@ -33,21 +33,19 @@ Captivating way to revamp their new member orientation process to capture data f
 
 Our user:
 1. Navigate to “/” and see a landing page with the logo of Digital NEST
-  1. Name of the website “Digital NEST”
-  2. Links to “Log In” and “Sign Up”
-  3. Sign up for an account
-  4. Log into their account
-2. Be redirected to an intro on how to use the application
-  1. On the main page see
-    1. A link to
+    1. Name of the website “Digital NEST”
+    2. Links to “Log In” and “Sign Up”
+    3. Sign up for an account
+    4. Log into their account
+2. Be redirected to an intro on how to use the application on theis main page see a link to
       1. Log out
       2. their profile
       3. Course
       4. Messages
       5. Name
 3. Update their profile by name,email,password,gender
-4. Click on the orientation card to initiation the orientation part of the application
-  1. Once user clicks on orientation
+4. Click on the orientation card to initiation the orientation part of the application4
+5.Once user clicks on orientation
     1. They can click on the guided tour, which will launch them in a Map of the location
     2. In each location they will be asked a series of questions that will be saved to their profile
     3. Once completed with the tour they will be prompted with a congratulations
