@@ -3,33 +3,129 @@
   <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="styles/styles.css">
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
 
   </head>
   <body>
-    <div class="">
-      <h1>Main landing Page</h1>
 
-    </div>
-    <div class="">
-      <h2>Side nav</h2>
-    </div>
 
-    <div class="">
-      <h2>boxes</h2>
-    </div>
+            <div class="wrapper">
+                <!-- Sidebar Holder -->
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <h3>Digital NEST</h3>
+                        <strong>DN</strong>
+                    </div>
 
-    <div class="">
-      <h2>upcoming events</h2>
-    </div>
+                    <ul class="list-unstyled components">
+                        <li class="active">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                                <i class=""></i>
+                                Profile
+                            </a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li><a href="#">Home 1</a></li>
+                                <li><a href="#">Home 2</a></li>
+                                <li><a href="#">Home 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class=""></i>
+                                Workshops
+                            </a>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                                <i class=""></i>
+                                Projects
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li><a href="#">Page 1</a></li>
+                                <li><a href="#">Page 2</a></li>
+                                <li><a href="#">Page 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class=""></i>
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class=""></i>
+                                Orientation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class=""></i>
+                                Chat
+                            </a>
+                        </li>
+                    </ul>
 
-    <div class="">
-      <h2>Member Name</h2>
-    </div>
+                    <ul class="list-unstyled CTAs">
+                        <li><a href="/" class="download">Logout</a></li>
+                        <li><a href="#" class="article">User Name</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Page Content Holder -->
+                <div id="content">
+
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+
+                            <div class="navbar-header">
+                              <h1>Martin Vargas Vega</h1>
+                                <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                    <i class="glyphicon glyphicon-align-left"></i>
+                                    <span>Toggle Sidebar</span>
+                            </div>
+                          </button>
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="#">Page</a></li>
+                                    <li><a href="#">Page</a></li>
+                                    <li><a href="#">Page</a></li>
+                                    <li><a href="#">Page</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+
+                    <div class="">
+                      <h2>My Workshops</h2>
+                      <a href="#"> View Now</a>
+                      <a href="https://placeholder.com"><img src="http://via.placeholder.com/250x250"></a>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- jQuery CDN -->
+             <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+             <!-- Bootstrap Js CDN -->
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+             <script type="text/javascript">
+                 $(document).ready(function () {
+                     $('#sidebarCollapse').on('click', function () {
+                         $('#sidebar').toggleClass('active');
+                     });
+                 });
+             </script>
   </body>
 </html>
