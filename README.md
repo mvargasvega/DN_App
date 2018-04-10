@@ -1,10 +1,10 @@
-#Digital NEST
+# Digital NEST
 A paragraph-long description (elevator pitch) of your project.
 An application that will allow you to manage and keep track of your employees/constituents. The interface is built to seemlisly allow the transitioning of new individual to be on boarded to your company.
 
 
 
-###A link to your hosted working app.
+### A link to your hosted working app.
 Link to application - TBA
 
 
