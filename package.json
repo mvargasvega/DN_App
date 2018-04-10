@@ -18,6 +18,7 @@
   "homepage": "https://github.com/mvargasvega/DN_App#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.16.3",
     "mongoose": "^5.0.14"
   }
