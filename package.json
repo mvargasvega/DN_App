@@ -1,0 +1,24 @@
+{
+  "name": "dn_app",
+  "version": "1.0.0",
+  "description": "A paragraph-long description (elevator pitch) of your project. An application that will allow you to manage and keep track of your employees/constituents. The interface is built to seemlisly allow the transitioning of new individual to be on boarded to your company.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvargasvega/DN_App.git"
+  },
+  "author": "Martin Vargas Vega",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvargasvega/DN_App/issues"
+  },
+  "homepage": "https://github.com/mvargasvega/DN_App#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.14"
+  }
+}
