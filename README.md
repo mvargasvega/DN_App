@@ -18,7 +18,7 @@ An application that will allow you to manage and keep track of your employees/co
 
 ### Installation steps for the app itself and any dependencies - how would another developer run your site locally?
 
-### User Stories - who are your users, what do they want, and why? What features will your app have?
+### User Stories
 
 ### User "New Digital NEST Member" -
 As a brand new youth entering a technology location, you may not know where to begin or even realize what areas can engage your interest. With the orientation portion of this application we will help make that moment engaging and captivating for this individual. With the data recorded by this individual we can then direct them to areas that capture their engagement.
