@@ -9,7 +9,7 @@ var UserSchema = new Schema({
   Email: String,
   Password: String,
   Gender: String, //male, female, non-binary
-  Orientation: String, //true or false
+  Orientation: Boolean, //true or false
   Role: String; //admin, student, donor
 });
 
