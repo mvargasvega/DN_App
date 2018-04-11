@@ -13,24 +13,24 @@ var express = require('express'),
 
 
 var db = require("./models");
-    // User = db.User;
+    User = db.User;
 
 
-    // middleware for auth
-    app.use(cookieParser());
-    app.use(session({
-      secret: 'supersecretkey', // change this!
-      resave: false,
-      saveUninitialized: false
-    }));
-    app.use(passport.initialize());
-    app.use(passport.session());
+// middleware for auth
+app.use(cookieParser());
+app.use(session({
+    secret: 'supersecretkey', // change this!
+    resave: false,
+    saveUninitialized: false
+  }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 
-    // passport config
-    passport.use(new LocalStrategy(User.authenticate()));
-    passport.serializeUser(User.serializeUser());
-    passport.deserializeUser(User.deserializeUser());
+// passport config
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 
 

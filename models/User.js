@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
+    /*  passportLocalMongoose takes care of hashing and salting the user's plain-text password when they sign up. */
     passportLocalMongoose = require('passport-local-mongoose');
 
 
