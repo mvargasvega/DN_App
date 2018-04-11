@@ -8,17 +8,19 @@ var expressLayouts = require('express-ejs-layouts');
 var db = require("./models");
     // User = db.User;
 
-var app = express();
 
 
 //Configure app
 app.use(express.static('public'));          // Static directory
+
+// configure bodyParser (for receiving form data)
 app.use(bodyParser.urlencoded({ extended: true })); // req.body
 app.use(expressLayouts);
 
 
 //Load View Engine
 app.set('views', __dirname + '/views');
+//set view engine to ejs
 app.set('view engine', 'ejs');
 
 // Home Route
@@ -45,6 +47,10 @@ app.get('/confirmation', function (req, res) {
   console.log("hello I am main");
   res.sendFile('views/confirmation.html' , { root : __dirname});
 });
+app.get('/orientation', function (req, res) {
+  console.log("hello I am main");
+  res.sendFile('views/orientation.html' , { root : __dirname});
+});
 
 
 
@@ -55,10 +61,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-// Homepage -- Display a list of current todos and a form
-app.get('/', function(req, res) {
-    res.sendFile( __dirname + '/views/index.html')
-});
+
 
 
 
