@@ -1,16 +1,41 @@
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-var expressLayouts = require('express-ejs-layouts');
+var express = require('express'),
+  app = express(),
+  mongoose = require('mongoose'),
+  bodyParser = require('body-parser'),
+  methodOverride = require("method-override"),
+  expressLayouts = require('express-ejs-layouts'),
+
+  //  NEW ADDITIONS
+ cookieParser = require('cookie-parser'),
+ session = require('express-session'),
+ passport = require('passport'),
+ LocalStrategy = require('passport-local').Strategy;
 
 
 var db = require("./models");
     // User = db.User;
 
 
+    // middleware for auth
+    app.use(cookieParser());
+    app.use(session({
+      secret: 'supersecretkey', // change this!
+      resave: false,
+      saveUninitialized: false
+    }));
+    app.use(passport.initialize());
+    app.use(passport.session());
+
+
+    // passport config
+    passport.use(new LocalStrategy(User.authenticate()));
+    passport.serializeUser(User.serializeUser());
+    passport.deserializeUser(User.deserializeUser());
+
+
 
 //Configure app
+// serve static files from public folder
 app.use(express.static('public'));          // Static directory
 
 // configure bodyParser (for receiving form data)
@@ -22,6 +47,12 @@ app.use(expressLayouts);
 app.set('views', __dirname + '/views');
 //set view engine to ejs
 app.set('view engine', 'ejs');
+
+app.use(methodOverride("_method"));
+
+
+
+
 
 // Home Route
 app.get('/', function (req, res) {
