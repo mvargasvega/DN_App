@@ -7,7 +7,7 @@ var users = [
     lastName: "Cisneros",
     username: "test",
     email: "test@gmail.com",
-    password: "123",
+    password: "test",
     gender: "Male", //male, female, non-binary
     orientation: "false", //true or false
     role: "Member"

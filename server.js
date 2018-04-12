@@ -53,11 +53,15 @@ app.get('/signup', function (req, res) {
   res.render('signup');
 });
 
+// show login view
+app.get('/login', function (req, res) {
+ res.render('login');
+});
 
-
-app.get('/test', function (req, res) {
-  console.log("I am ejs test");
-  res.render('test');
+app.post('/login', passport.authenticate('local'), function (req, res) {
+  console.log(req.user);
+  res.send('logged in!!!'); // sanity check
+  res.redirect('main'); // preferred!
 });
 
 app.post('/signup', function (req, res) {
@@ -73,20 +77,15 @@ app.post('/signup', function (req, res) {
 
 // Home Route
 app.get('/', function (req, res) {
-  res.sendFile('views/index.html' , { root : __dirname});
+  res.render('index');
 });
 
-
-
-app.get('/login', function (req, res) {
-  console.log("hello I am login");
-  res.sendFile('views/login.html' , { root : __dirname});
-});
 
 app.get('/main', function (req, res) {
   console.log("hello I am main");
-  res.sendFile('views/main.html' , { root : __dirname});
+  res.render('main');
 });
+
 
 app.get('/confirmation', function (req, res) {
   console.log("hello I am main");
