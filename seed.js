@@ -6,20 +6,20 @@ var users = [
     firstName: "Marcus",
     lastName: "Cisneros",
     username: "test",
-    email: "test@gmail.com",
     password: "test",
+    email: "test@gmail.com",
     gender: "Male", //male, female, non-binary
-    orientation: "false", //true or false
+    orientation: false, //true or false
     role: "Member"
   },
   {
     firstName: "Martin",
     lastName: "Vargas",
     username: "test2",
-    email: "alsdkfj@galkgj.com",
     password: "123dsfa",
+    email: "alsdkfj@galkgj.com",
     gender: "Male", //male, female, non-binary
-    orientation: "true", //true or false
+    orientation: true, //true or false
     role: "Admin"
   },
 
@@ -31,14 +31,17 @@ db.User.remove({}, function (err, removed){
     throw err;
   }
   console.log('removed all users');
-  db.User.create(users, function (err, all_users){
-    if (err){
-      console.log("inside create");
-      return console.log("Error:", err);
-    }
-    else{
-      console.log('users  '+ all_users );
-      console.log('recreated all users');
-    }
-  });
+  users.forEach(function(user){
+    db.User.register(new db.User({firstName:user.firstname,lastName:user.lastName,username:user.username}),user.password, function (err, all_users){
+      if (err){
+        console.log("inside create");
+        return console.log("Error:", err);
+      }
+      else{
+        console.log('users  '+ all_users );
+        console.log('recreated all users');
+      }
+    });
+  })
+
 });

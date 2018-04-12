@@ -8,10 +8,10 @@ var UserSchema = new Schema({
   firstName: String,
   lastName: String,
   username: String,
-  email: String,
   password: String,
+  email: String,
   gender: String, //male, female, non-binary
-  orientation: String, //true or false
+  orientation: Boolean, //true or false
   role: String //admin, student, donor
 });
 

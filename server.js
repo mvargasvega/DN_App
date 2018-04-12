@@ -58,11 +58,14 @@ app.get('/login', function (req, res) {
  res.render('login');
 });
 
+
+
 app.post('/login', passport.authenticate('local'), function (req, res) {
+  console.log('wtf');
   console.log(req.user);
   res.send('logged in!!!'); // sanity check
-  res.redirect('main'); // preferred!
 });
+
 
 app.post('/signup', function (req, res) {
   console.log("I was hit to sign up");
@@ -80,7 +83,7 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-
+//Main landing page for user
 app.get('/main', function (req, res) {
   console.log("hello I am main");
   res.render('main');
@@ -105,13 +108,15 @@ app.use(function(req, res, next) {
     next();
 });
 
+
+/***********************  *****************/
 //get all User
 app.get('/api/users', function (req , res){
   console.log("I work")
-  User.find()
-  .exec(function(err, allUsers){
-    if(err) {return console.log("Index error:" + err); }
-    res.json(allUsers);
+  User.find().exec(
+    function(err, allUsers){
+      if(err) {return console.log("Index error:" + err); }
+      res.json(allUsers);
   });
 });
 
@@ -129,8 +134,8 @@ app.post('/api/users', function (req, res) {
     firstName: req.body.firstName ,
     lastName: req.body.lastName ,
     username: req.body.username ,
-    email: req.body.email,
     password: req.body.password ,
+    email: req.body.email,
     gender: req.body.gender ,
     orientation: req.body.orientation ,
     role: req.body.role ,
@@ -142,7 +147,34 @@ app.post('/api/users', function (req, res) {
   });
 });
 
+//update a user
 
+app.put('/api/users/:id', function(req, res) {
+  console.log('I am in updateing user');
+
+  var userId = req.params.id;
+
+  User.findOne({_id: userId}, function (err, currentUser){
+    if(err){
+      res.status(500).json("user doesnt exist");
+    }
+    console.log(currentUser);
+    currentUser.firstName = req.body.firstName || currentUser.firstName;
+    currentUser.lastName = req.body.lastName || currentUser.lastName;
+    currentUser.username = req.body.username || currentUser.username;
+    currentUser.password = req.body.password || currentUser.passport;
+    currentUser.email = req.body.email || currentUser.email;
+    currentUser.gender = req.body.gender || currentUser.gender;
+    currentUser.save(function( err , updated ){
+      if(err) {
+        res.status(500).json("user can't be updated");
+        throw err;
+      }
+      console.log(updated);
+      res.status(200).json(updated);
+    });
+  });
+});
 
 
 // Server Started
