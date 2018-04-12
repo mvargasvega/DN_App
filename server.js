@@ -59,11 +59,10 @@ app.get('/login', function (req, res) {
 });
 
 
-
+//redirect to login
 app.post('/login', passport.authenticate('local'), function (req, res) {
-  console.log('wtf');
   console.log(req.user);
-  res.send('logged in!!!'); // sanity check
+  res.render('main'); // sanity check
 });
 
 
