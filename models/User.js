@@ -5,13 +5,14 @@ var mongoose = require('mongoose'),
 
 
 var UserSchema = new Schema({
-  FirstName: String,
-  LastName: String,
-  Email: String,
-  Password: String,
-  Gender: String, //male, female, non-binary
-  Orientation: Boolean, //true or false
-  Role: String //admin, student, donor
+  firstName: String,
+  lastName: String,
+  username: String,
+  email: String,
+  password: String,
+  gender: String, //male, female, non-binary
+  orientation: String, //true or false
+  role: String //admin, student, donor
 });
 
 
