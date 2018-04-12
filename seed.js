@@ -32,7 +32,15 @@ db.User.remove({}, function (err, removed){
   }
   console.log('removed all users');
   users.forEach(function(user){
-    db.User.register(new db.User({firstName:user.firstname,lastName:user.lastName,username:user.username}),user.password, function (err, all_users){
+    db.User.register(new db.User({
+      firstName:user.firstname,
+      lastName:user.lastName,
+      username:user.username,
+      email:user.email,
+      gender:user.gender,
+      orientation:user.orientation,
+      role: user.role
+    }),user.password, function (err, all_users){
       if (err){
         console.log("inside create");
         return console.log("Error:", err);
