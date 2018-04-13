@@ -59,16 +59,26 @@ app.get('/login', function (req, res) {
 });
 
 
-//redirect to login
+//redirect to user page once authenticated
 app.post('/login', passport.authenticate('local'), function (req, res) {
   console.log(req.user);
-  res.render('main'); // sanity check
+  if(req.user)
+  res.render('main',{user:req.user})
+    else {
+      res.redirect('/login')
+    } // sanity check
 });
 
-
+//signing up new user to DB
 app.post('/signup', function (req, res) {
   console.log("I was hit to sign up");
-  User.register(new User({ email: req.body.email }), req.body.password,
+  User.register(new User({
+    firstName:req.body.firstName,
+    lastName:req.body.lastName,
+    username: req.body.username,
+    email:req.body.email,
+    gender:req.body.gender
+  }), req.body.password,
     function (err, newUser) {
       passport.authenticate('local')(req, res, function() {
         res.send('signed up!!!');
@@ -77,15 +87,24 @@ app.post('/signup', function (req, res) {
   );
 });
 
+//log out user
+app.get('/logout', function (req, res) {
+  console.log("BEFORE logout", JSON.stringify(req.user));
+  req.logout();
+  console.log("AFTER logout", JSON.stringify(req.user));
+  res.redirect('/');
+});
+
+
 // Home Route
 app.get('/', function (req, res) {
-  res.render('index');
+  res.render('index',{user: req.user});
 });
 
 //Main landing page for user
 app.get('/main', function (req, res) {
   console.log("hello I am main");
-  res.render('main');
+  res.render('main', {user: req.user});
 });
 
 

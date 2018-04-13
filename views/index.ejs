@@ -9,27 +9,39 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/index.css">
 
   </head>
-  <body>
+  <body class="background">
 
     <div class="container">
-      <div class="">
+      <div class="jumbotron">
+
+      <div class="nesthead">
         <h1> Digital NEST</h1>
       </div>
 
-
-        <div class="row">
+      <div class="row">
           <h1>Members</h1>
-        </div>
-
-        <div class="row">
-          <div class="col">
-            <a href="/login" class = "btn btn-primary"> Log In</a>
-            <a href="/signup" class = "btn btn-primary"> Sign up </a>
+      </div>
+      <div class="row">
+        <div class="col">
+          <% if(!user) { %>
+            <a href="/login" class = "btn btn-primary">Log in</a>
+            <a href="/signup" class = "btn btn-primary">Sign up</a>
+          <% } else { %>
+        <div>
+          <div class="">
+            <h1>
+              Welcome, <%= user.username %>!
+            </h1>
           </div>
         </div>
-
+          <a href="/logout" class ="btn btn-primary">Log out</a>
+        <% } %>
+      </div>
+      </div>
+    </div>
 
       <footer>
         <div class="">
