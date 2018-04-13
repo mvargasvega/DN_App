@@ -1,0 +1,16 @@
+body{
+  width: 100%;
+}
+.background{
+  background : linear-gradient(90deg, rgba(0, 6, 38, 1) 0%, rgba(0, 13, 109, 1) 100%);
+
+}
+
+.nesthead{
+
+  font-family : Myriad Pro;
+  font-size : 103px;
+  line-height : 93.79px;
+  color : #00FFCE;
+  color : rgb(0, 255, 206);
+}

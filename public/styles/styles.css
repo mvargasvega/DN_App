@@ -1,6 +1,4 @@
-/*
-    DEMO STYLE
-*/
+
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 
@@ -149,7 +147,7 @@ a[data-toggle="collapse"] {
 }
 
 a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
-    content: '\e259';
+    content: '+';
     display: block;
     position: absolute;
     right: 20px;
@@ -157,7 +155,7 @@ a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
     font-size: 0.6em;
 }
 a[aria-expanded="true"]::before {
-    content: '\e260';
+    content: '+';
 }
 
 
